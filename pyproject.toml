@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "frappe-mcp-client"
+version = "0.1.0"
+description = "A Bridge Client for Frappe MCP Server"
+readme = "README.md"
+authors = [{ name = "Mascor", email = "mascor@example.com" }]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "httpx>=0.25.0",
+]
+scripts = { "mcp-frappe" = "frappe_mcp_client.main:main" }
+
+[project.urls]
+Homepage = "https://github.com/mascor/frappe-mcp-client"
+Repository = "https://github.com/mascor/frappe-mcp-client"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/frappe_mcp_client"]
