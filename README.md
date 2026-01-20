@@ -1,5 +1,7 @@
 # Frappe MCP Client
 
+[![Leggi in Italiano](https://img.shields.io/badge/lang-it-green.svg)](README.it.md)
+
 A Python Bridge Client that exposes [Frappe](https://frappeframework.com) server capabilities via the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/).
 
 This client connects to a remote Frappe instance where the **MCP Server App** is installed and forwards requests, allowing AI agents (like Claude Desktop or Cursor) to interact securely with your ERPNext/Frappe data.
