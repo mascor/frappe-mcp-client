@@ -22,12 +22,12 @@ Before using this client, you must prepare your Frappe site:
     bench --site <your-site> install-app mcp_server
     ```
 
-2.  **Setup MCP User & Token**:
-    Run the setup script to generate an API key/secret or use the dedicated MCP User.
+2.  **Setup MCP User & Keys**:
+    Run the setup script to generate an API Key & Secret for the MCP User.
     ```bash
-    bench --site <your-site> execute mcp_server.mcp_server.setup.setup_mcp
+    bench --site <your-site> execute mcp_server.setup.setup_mcp
     ```
-    *Copy the generated Token (API Key:Secret) immediately.*
+    *Copy the generated `api_key` and `api_secret` immediately.*
 
 3.  **Configure Access (Effectively Empty by Default)**:
     By default, the server acts as a firewall and blocks EVERYTHING. You must explicitly allow DocTypes.
@@ -40,6 +40,12 @@ Before using this client, you must prepare your Frappe site:
 ```bash
 git clone https://github.com/mascor/frappe-mcp-client
 cd frappe-mcp-client
+
+# Create and activate a virtual environment (Recommended to avoid permission issues)
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install the package
 pip install .
 ```
 

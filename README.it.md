@@ -35,6 +35,12 @@ Prima di usare questo client, devi preparare il tuo sito Frappe:
 ```bash
 git clone https://github.com/mascor/frappe-mcp-client
 cd frappe-mcp-client
+
+# Crea e attiva un ambiente virtuale (Raccomandato per evitare problemi di permessi)
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Installa il pacchetto
 pip install .
 ```
 

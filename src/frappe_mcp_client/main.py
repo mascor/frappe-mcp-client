@@ -92,7 +92,7 @@ async def delete_doc(doctype: str, name: str) -> Dict[str, Any]:
     return await client.delete_doc(doctype, name)
 
 @mcp.tool()
-async def ping() -> str:
+async def ping() -> Dict[str, Any]:
     """
     Ping the Frappe server to check connection.
     """
