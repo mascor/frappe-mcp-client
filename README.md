@@ -1,5 +1,10 @@
 # Frappe MCP Client
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![MCP](https://img.shields.io/badge/MCP-Compatible-green)](https://modelcontextprotocol.io)
+[![Frappe MCP Server](https://img.shields.io/badge/Server-frappe--mcp--server-blue)](https://github.com/mascor/frappe-mcp-server)
+
 [![Leggi in Italiano](https://img.shields.io/badge/lang-it-green.svg)](README.it.md)
 
 A Python Bridge Client that exposes [Frappe](https://frappeframework.com) server capabilities via the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/).
