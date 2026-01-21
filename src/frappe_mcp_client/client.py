@@ -88,5 +88,5 @@ class FrappeClient:
         }
         return await self._post("delete_doc", payload)
 
-    async def ping(self) -> str:
+    async def ping(self) -> Dict[str, Any]:
         return await self._post("ping")
