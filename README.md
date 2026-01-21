@@ -57,6 +57,7 @@ This client exposes the following tools from the remote Frappe server:
 - `search_docs(doctype, filters, fields)`
 - `create_doc(doctype, data)`
 - `update_doc(doctype, name, data)`
+- `delete_doc(doctype, name)`
 - `get_doc(doctype, name)`
 - `get_meta(doctype)`
 - `ping()`

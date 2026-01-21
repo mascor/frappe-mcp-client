@@ -3,9 +3,10 @@ from typing import Any, Dict, List, Optional
 import urllib.parse
 
 class FrappeClient:
-    def __init__(self, url: str, token: str):
+    def __init__(self, url: str, token: str, timeout: float = 30.0):
         self.url = url.rstrip("/")
         self.token = token
+        self.timeout = timeout
         self.headers = {
             "Authorization": f"token {self.token}",
             "Content-Type": "application/json",
@@ -22,7 +23,7 @@ class FrappeClient:
                     self._get_api_url(method),
                     json=data or {},
                     headers=self.headers,
-                    timeout=30.0
+                    timeout=self.timeout
                 )
                 response.raise_for_status()
                 result = response.json()
@@ -79,6 +80,13 @@ class FrappeClient:
             "doctype": doctype
         }
         return await self._post("get_meta", payload)
+
+    async def delete_doc(self, doctype: str, name: str) -> Dict[str, Any]:
+        payload = {
+            "doctype": doctype,
+            "name": name
+        }
+        return await self._post("delete_doc", payload)
 
     async def ping(self) -> str:
         return await self._post("ping")

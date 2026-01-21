@@ -79,6 +79,19 @@ async def get_meta(doctype: str) -> Dict[str, Any]:
     return await client.get_meta(doctype)
 
 @mcp.tool()
+async def delete_doc(doctype: str, name: str) -> Dict[str, Any]:
+    """
+    Delete a document.
+    
+    Args:
+        doctype: The DocType of the document
+        name: The name/ID of the document to delete
+    """
+    if not client:
+        raise RuntimeError("Client not initialized")
+    return await client.delete_doc(doctype, name)
+
+@mcp.tool()
 async def ping() -> str:
     """
     Ping the Frappe server to check connection.
